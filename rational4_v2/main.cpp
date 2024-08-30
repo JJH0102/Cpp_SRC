@@ -1,3 +1,5 @@
+// 2024.08.30 입력 받는 코드 추가
+
 #include <iostream>
 #include "rational.h"
 
@@ -29,4 +31,11 @@ int main()
     std::cout << "r2 : " << r2 << std::endl;
     std::cout << "r3 : " << r3 << std::endl;
     std::cout << "r4 : " << r4 << std::endl;
+
+    Rational r5;
+
+    std::cout << "input r5 : ";
+    std::cin >> r5;
+
+    std::cout << "r5 : " << r5 << std::endl;
 }
