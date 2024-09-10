@@ -1,3 +1,5 @@
+// 2024.09.10 dynamic_cast 추가
+
 #include <iostream>
 #include <typeinfo>
 #include "shape.h"
@@ -8,12 +10,14 @@ void printShape(const Shape *ps)
 {
     if (typeid(*ps) == typeid(Rectangle)) {                 // RTTI (Runtime Type Identification)
         std::cout << "rectangle area : " << ps->area() << ", ";
-        Rectangle *pr = (Rectangle *)ps;
+        // Rectangle *pr = (Rectangle *)ps;
+        const Rectangle *pr = dynamic_cast<const Rectangle *>(ps);
         std::cout << "diagonal : "ps->getDiagonal() << std::endl;
     }
     else if (typeid(*ps) == typeid(Circle)) {
         std::cout << "circle area : " << ps->area() << ", ";
-        Circle *pc = (Circle *)ps;
+        // Circle *pc = (Circle *)ps;
+        const Circle *pc = dynamic_cast<const Circle *>(ps);
         std::cout << "circumference : " << ps->getCircumference() << std::endl;
     }
 }
